@@ -51,3 +51,4 @@ expense_tracker/
 The `Router.php` has `basePath = '/expense_tracker/public'` which matches the default XAMPP subfolder path.
 If your folder is named differently, edit that line in `app/Core/Router.php`.
 "# expense_tracker" 
+"# expense_tracker" 
