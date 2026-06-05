@@ -1,7 +1,4 @@
--- ============================================================
---  Expense Tracker — Full Schema + Seed Data
---  Run this in phpMyAdmin > SQL tab
--- ============================================================
+
 
 CREATE DATABASE IF NOT EXISTS expense_tracker
   CHARACTER SET utf8mb4
@@ -9,7 +6,7 @@ CREATE DATABASE IF NOT EXISTS expense_tracker
 
 USE expense_tracker;
 
--- ── USERS (Member 1) ──────────────────────────────────────────
+-- ── USERS  ──────────────────────────────────────────
 CREATE TABLE users (
   id         INT           NOT NULL AUTO_INCREMENT,
   name       VARCHAR(100)  NOT NULL,
@@ -20,7 +17,7 @@ CREATE TABLE users (
   PRIMARY KEY (id)
 );
 
--- ── CATEGORIES (Member 3 — seeded, not user-created) ──────────
+-- ── CATEGORIES ──────────
 CREATE TABLE categories (
   id    INT          NOT NULL AUTO_INCREMENT,
   name  VARCHAR(50)  NOT NULL,
@@ -39,7 +36,7 @@ INSERT INTO categories (name, icon, color) VALUES
   ('Utilities',     '💡', '#403294'),
   ('Other',         '📦', '#8B949E');
 
--- ── EXPENSES (Member 3) ───────────────────────────────────────
+-- ── EXPENSES ──────────────────────────────────
 CREATE TABLE expenses (
   id          INT           NOT NULL AUTO_INCREMENT,
   user_id     INT           NOT NULL,
@@ -53,7 +50,7 @@ CREATE TABLE expenses (
   FOREIGN KEY (category_id) REFERENCES categories(id) ON DELETE RESTRICT
 );
 
--- ── BUDGETS (Member 2) ────────────────────────────────────────
+-- ── BUDGETS ───────────────────────────────────────
 -- UNIQUE KEY ensures one budget per user per month
 CREATE TABLE budgets (
   id         INT           NOT NULL AUTO_INCREMENT,
