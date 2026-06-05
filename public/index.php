@@ -9,6 +9,7 @@ require_once __DIR__ . '/../app/Models/User.php';
 require_once __DIR__ . '/../app/Models/Budget.php';
 require_once __DIR__ . '/../app/Models/Expense.php';
 require_once __DIR__ . '/../app/Models/Category.php';
+require_once __DIR__ . '/../app/Controllers/CategoryController.php';
 
 // ── Load all controllers ──────────────────────────────────────
 require_once __DIR__ . '/../app/Controllers/AuthController.php';
@@ -54,6 +55,14 @@ $router->get('/expense/delete',   'ExpenseController@delete');
 $router->get('/user',          'BudgetController@showPanel');
 $router->post('/budget/save',  'BudgetController@save');
 $router->get('/budget/delete', 'BudgetController@delete');
+
+// ── Categories ────────────────────────────────────────────────
+$router->get('/categories',        'CategoryController@index');
+$router->get('/categories/add',    'CategoryController@showAdd');
+$router->post('/categories/add',   'CategoryController@add');
+$router->get('/categories/edit',   'CategoryController@showEdit');
+$router->post('/categories/update','CategoryController@update');
+$router->get('/categories/delete', 'CategoryController@delete');
 
 // Admin user management
 $router->get('/admin/user/edit',       'ProfileController@adminShowEdit');

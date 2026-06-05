@@ -859,6 +859,8 @@ body {
   border-radius: 10px;
 }
 
+.pac-icon--orange { background: #FFFAE6; }
+
 /* ── BUDGET ROW (recent list in dashboard) ──────────────────── */
 .budget-row-inline {
   display: flex;

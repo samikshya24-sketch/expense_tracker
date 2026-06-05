@@ -309,6 +309,15 @@ $hasSearch      = !empty($searchQuery);
     <p class="user-name"><?= htmlspecialchars(Auth::name()) ?></p>
   </div>
 
+  <a href="/expense_tracker/public/categories" class="profile-action-card">
+  <div class="pac-icon pac-icon--orange">&#127991;</div>
+  <div class="pac-text">
+    <span class="pac-title">Categories</span>
+    <span class="pac-sub">Add, edit and manage categories</span>
+  </div>
+  <span class="pac-arrow">&#8250;</span>
+</a>
+
   <!-- Profile & Settings Links -->
   <div style="padding:0 16px;margin-top:12px;display:flex;flex-direction:column;gap:10px">
 
